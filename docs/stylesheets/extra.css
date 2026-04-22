@@ -1,0 +1,325 @@
+:root {
+  --md-primary-fg-color: #f48120;
+  --md-primary-fg-color--light: #f59a47;
+  --md-primary-fg-color--dark: #c96414;
+  --md-accent-fg-color: #f48120;
+
+  --doc-bg: #ffffff;
+  --doc-bg-soft: #f7f8fa;
+  --doc-bg-muted: #fbfbfc;
+  --doc-border: #d9dde3;
+  --doc-border-strong: #c8ced8;
+  --doc-text: #1f2937;
+  --doc-text-muted: #5b6472;
+  --doc-link-soft: #fff6ed;
+  --doc-info: #eef6ff;
+  --doc-success: #effaf3;
+  --doc-warning: #fff5e8;
+  --doc-radius: 10px;
+  --doc-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+[data-md-color-scheme="slate"] {
+  --doc-bg: #101418;
+  --doc-bg-soft: #151b22;
+  --doc-bg-muted: #111820;
+  --doc-border: #2b3542;
+  --doc-border-strong: #3a4655;
+  --doc-text: #edf2f7;
+  --doc-text-muted: #b7c0cc;
+  --doc-link-soft: #241c14;
+  --doc-info: #121e2b;
+  --doc-success: #122319;
+  --doc-warning: #251b11;
+  --doc-shadow: none;
+}
+
+.md-typeset {
+  color: var(--doc-text);
+}
+
+.md-typeset h1 {
+  margin: 0 0 0.65rem;
+  color: var(--doc-text);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.md-typeset h2 {
+  margin: 2rem 0 0.8rem;
+  color: var(--doc-text);
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
+.md-typeset h3 {
+  color: var(--doc-text);
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
+.md-typeset p,
+.md-typeset li {
+  color: var(--doc-text);
+}
+
+.md-typeset a {
+  color: var(--md-primary-fg-color);
+}
+
+.md-typeset code {
+  word-break: break-word;
+}
+
+.md-typeset table:not([class]) {
+  border-radius: var(--doc-radius);
+  overflow: hidden;
+}
+
+.md-typeset img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0.85rem 0;
+  border: 1px solid var(--doc-border);
+  border-radius: var(--doc-radius);
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  border: 1px solid var(--doc-border);
+  border-radius: var(--doc-radius);
+  box-shadow: none;
+}
+
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  background: var(--doc-warning);
+}
+
+.md-typeset .admonition.info,
+.md-typeset details.info,
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  background: var(--doc-info);
+}
+
+.md-typeset .admonition.success,
+.md-typeset details.success {
+  background: var(--doc-success);
+}
+
+.doc-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.doc-card-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.doc-card {
+  display: flex;
+  min-height: 138px;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1rem;
+  color: var(--doc-text) !important;
+  text-decoration: none !important;
+  background: var(--doc-bg);
+  border: 1px solid var(--doc-border);
+  border-radius: var(--doc-radius);
+  box-shadow: var(--doc-shadow);
+  transition: border-color 0.16s ease, background-color 0.16s ease, transform 0.16s ease;
+}
+
+.doc-card:hover {
+  background: var(--doc-bg-muted);
+  border-color: var(--doc-border-strong);
+  transform: translateY(-1px);
+}
+
+.doc-card:focus-visible,
+.doc-button:focus-visible,
+.quick-links a:focus-visible {
+  outline: 3px solid rgba(244, 129, 32, 0.35);
+  outline-offset: 2px;
+}
+
+.doc-card-title {
+  color: var(--doc-text);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.doc-card-text {
+  flex: 1;
+  color: var(--doc-text-muted);
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
+.doc-card-meta {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  color: var(--md-primary-fg-color);
+  font-size: 0.84rem;
+  font-weight: 650;
+}
+
+.doc-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.58rem 0.9rem;
+  color: #ffffff !important;
+  font-weight: 650;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none !important;
+  background: var(--md-primary-fg-color);
+  border: 1px solid var(--md-primary-fg-color);
+  border-radius: 8px;
+}
+
+.doc-button:hover {
+  background: var(--md-primary-fg-color--dark);
+  border-color: var(--md-primary-fg-color--dark);
+}
+
+.doc-button.secondary {
+  color: var(--doc-text) !important;
+  background: var(--doc-bg);
+  border-color: var(--doc-border);
+}
+
+.doc-button.secondary:hover {
+  color: var(--md-primary-fg-color) !important;
+  background: var(--doc-link-soft);
+  border-color: rgba(244, 129, 32, 0.42);
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.9rem;
+}
+
+.address-panel {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: var(--doc-bg-soft);
+  border: 1px solid var(--doc-border);
+  border-radius: var(--doc-radius);
+}
+
+.address-panel p {
+  margin: 0.35rem 0;
+}
+
+.address-panel code {
+  font-size: 0.92rem;
+}
+
+.eyebrow {
+  color: var(--doc-text-muted) !important;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.quick-links a {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 0.7rem 0.85rem;
+  color: var(--doc-text) !important;
+  font-weight: 650;
+  text-decoration: none !important;
+  background: var(--doc-bg);
+  border: 1px solid var(--doc-border);
+  border-radius: 8px;
+}
+
+.quick-links a:hover {
+  color: var(--md-primary-fg-color) !important;
+  background: var(--doc-link-soft);
+  border-color: rgba(244, 129, 32, 0.42);
+}
+
+.contact-list {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.contact-item {
+  padding: 1rem;
+  background: var(--doc-bg);
+  border: 1px solid var(--doc-border);
+  border-radius: var(--doc-radius);
+}
+
+.contact-item strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--doc-text);
+  font-size: 1rem;
+}
+
+.contact-item p {
+  margin: 0 0 0.8rem;
+  color: var(--doc-text-muted);
+}
+
+@media screen and (max-width: 960px) {
+  .doc-card-grid,
+  .doc-card-grid.two,
+  .quick-links {
+    grid-template-columns: 1fr;
+  }
+
+  .doc-card {
+    min-height: 124px;
+  }
+
+  .action-row {
+    flex-direction: column;
+  }
+
+  .doc-button,
+  .quick-links a {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .md-typeset h1 {
+    font-size: 1.55rem;
+  }
+
+  .md-typeset h2 {
+    font-size: 1.18rem;
+  }
+
+  .doc-card,
+  .address-panel,
+  .contact-item {
+    padding: 0.9rem;
+  }
+}

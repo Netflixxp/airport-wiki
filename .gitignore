@@ -1,0 +1,7 @@
+.venv/
+site/
+.cache/
+.tmp-mkdocs/
+tmp-mkdocs/
+__pycache__/
+*.pyc

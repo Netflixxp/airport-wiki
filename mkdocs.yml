@@ -1,0 +1,76 @@
+site_name: 众筹加速器 Wiki
+site_description: 客户端下载、使用说明、最新网址与联系方式
+site_url: https://docs.example.com
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: 切换到深色模式
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到浅色模式
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - 首页: index.md
+  - 公告: notice.md
+  - 客户端使用:
+      - Windows:
+          - 客户端选择: platforms/windows.md
+          - 客户端A: clients/windows-client-a.md
+          - 客户端B: clients/windows-client-b.md
+      - macOS: clients/macos-client-a.md
+      - Android:
+          - 客户端选择: platforms/android.md
+          - 客户端A: clients/android-client-a.md
+          - 客户端B: clients/android-client-b.md
+      - Android TV: clients/android-tv.md
+      - iPhone / iPad: clients/ios.md
+      - OpenWrt: clients/openwrt.md
+  - 常见问题:
+      - 账号与节点: faq/subscribe.md
+      - 连接问题: faq/connection.md
+      - 常见报错: faq/common-errors.md
+  - 联系我们: contact.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  generator: false
+
+plugins:
+  - search
