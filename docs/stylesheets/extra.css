@@ -86,6 +86,10 @@
   border-radius: var(--doc-radius);
 }
 
+.md-typeset p > img:only-child {
+  max-width: min(100%, 760px);
+}
+
 .md-typeset .admonition,
 .md-typeset details {
   border: 1px solid var(--doc-border);
