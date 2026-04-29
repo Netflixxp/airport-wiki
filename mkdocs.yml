@@ -46,6 +46,7 @@ nav:
       - iPhone / iPad: clients/ios.md
       - OpenWrt: clients/openwrt.md
   - 常见问题:
+      - 流量不够了怎么办: faq/traffic.md
       - 账号与节点: faq/subscribe.md
       - 连接问题: faq/connection.md
       - 常见报错: faq/common-errors.md
