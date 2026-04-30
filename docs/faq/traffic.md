@@ -2,6 +2,21 @@
 
 流量不够时，有以下 3 种解决办法，请根据自己的需求选择。
 
+<div class="decision-grid">
+  <div class="decision-card">
+    <strong>临时不够用</strong>
+    <span>购买流量重置包，只重置流量，不延长有效期。</span>
+  </div>
+  <div class="decision-card">
+    <strong>长期不够用</strong>
+    <span>升级到更高流量套餐，系统会自动折算剩余价值。</span>
+  </div>
+  <div class="decision-card">
+    <strong>套餐本身够用</strong>
+    <span>原套餐续费，重置流量并延长套餐日期。</span>
+  </div>
+</div>
+
 ## 1. 购买流量重置包
 
 在用户当前套餐下方，一般会有一个「流量重置包」。购买后可以重置当前套餐的流量。

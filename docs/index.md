@@ -57,7 +57,7 @@
 ## 常用入口
 
 <div class="quick-links">
-  <a href="faq/traffic/">流量不够了怎么办</a>
+  <a class="quick-link-featured" href="faq/traffic/">流量不够了怎么办</a>
   <a href="notice/">查看公告</a>
   <a href="faq/subscribe/">账号与节点</a>
   <a href="faq/connection/">连接问题</a>
