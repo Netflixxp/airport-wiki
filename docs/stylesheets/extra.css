@@ -23,6 +23,9 @@
   --doc-radius: 10px;
   --doc-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
   --doc-shadow-soft: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --doc-grid-line: rgba(37, 99, 235, 0.055);
+  --doc-glow: rgba(37, 99, 235, 0.16);
+  --doc-sheen: rgba(255, 255, 255, 0.58);
   --doc-font-sans: Inter, "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
   --doc-font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
@@ -46,6 +49,48 @@
   --doc-ring: rgba(56, 189, 248, 0.32);
   --doc-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
   --doc-shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --doc-grid-line: rgba(56, 189, 248, 0.065);
+  --doc-glow: rgba(56, 189, 248, 0.18);
+  --doc-sheen: rgba(125, 211, 252, 0.22);
+}
+
+@keyframes doc-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes doc-sheen {
+  from {
+    transform: translateX(-140%) skewX(-18deg);
+  }
+
+  to {
+    transform: translateX(180%) skewX(-18deg);
+  }
+}
+
+@keyframes doc-pulse {
+  0%,
+  100% {
+    box-shadow: 0 10px 22px rgba(37, 99, 235, 0.18), 0 0 0 rgba(37, 99, 235, 0);
+  }
+
+  50% {
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.24), 0 0 0 5px rgba(37, 99, 235, 0.08);
+  }
+}
+
+@keyframes doc-arrow-nudge {
+  50% {
+    transform: translateX(3px);
+  }
 }
 
 .md-header {
@@ -61,20 +106,58 @@
 
 .md-main {
   background:
+    radial-gradient(circle at 92% 8%, rgba(14, 165, 233, 0.11), transparent 18rem),
+    linear-gradient(var(--doc-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--doc-grid-line) 1px, transparent 1px),
     linear-gradient(180deg, rgba(37, 99, 235, 0.045), transparent 18rem),
     var(--doc-bg);
+  background-size: auto, 34px 34px, 34px 34px, auto, auto;
 }
 
 [data-md-color-scheme="slate"] .md-main {
   background:
+    radial-gradient(circle at 88% 8%, rgba(14, 165, 233, 0.14), transparent 18rem),
+    linear-gradient(var(--doc-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--doc-grid-line) 1px, transparent 1px),
     linear-gradient(180deg, rgba(14, 165, 233, 0.08), transparent 18rem),
     var(--doc-bg);
+  background-size: auto, 34px 34px, 34px 34px, auto, auto;
 }
 
 .md-typeset {
   color: var(--doc-text);
   font-family: var(--doc-font-sans);
   line-height: 1.72;
+}
+
+.md-content__inner > h1,
+.md-content__inner > p,
+.md-content__inner > .admonition,
+.md-content__inner > .address-panel,
+.md-content__inner > .doc-card-grid,
+.md-content__inner > .quick-links,
+.md-content__inner > .decision-grid,
+.md-content__inner > .contact-list {
+  animation: doc-fade-up 420ms ease-out both;
+}
+
+.md-content__inner > p {
+  animation-delay: 40ms;
+}
+
+.md-content__inner > .admonition {
+  animation-delay: 90ms;
+}
+
+.md-content__inner > .address-panel,
+.md-content__inner > .doc-card-grid,
+.md-content__inner > .decision-grid {
+  animation-delay: 140ms;
+}
+
+.md-content__inner > .quick-links,
+.md-content__inner > .contact-list {
+  animation-delay: 190ms;
 }
 
 .md-typeset h1 {
@@ -232,7 +315,7 @@
   border-top: 3px solid var(--md-primary-fg-color);
   border-radius: var(--doc-radius);
   box-shadow: var(--doc-shadow);
-  transition: border-color 0.18s ease, background-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
   overflow: hidden;
   touch-action: manipulation;
@@ -242,9 +325,12 @@
   position: absolute;
   inset: 0;
   content: "";
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.09), transparent 42%);
+  background:
+    linear-gradient(135deg, rgba(37, 99, 235, 0.09), transparent 42%),
+    linear-gradient(90deg, transparent, var(--doc-sheen), transparent);
   opacity: 0;
   pointer-events: none;
+  transform: translateX(-140%) skewX(-18deg);
   transition: opacity 0.18s ease;
 }
 
@@ -252,18 +338,19 @@
   background: var(--doc-hover);
   border-color: var(--doc-border-strong);
   border-top-color: var(--md-accent-fg-color);
-  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.11);
-  transform: translateY(-1px);
+  box-shadow: 0 16px 34px var(--doc-glow);
+  transform: translateY(-2px);
 }
 
 .doc-card:hover::before {
   opacity: 1;
+  animation: doc-sheen 620ms ease-out;
 }
 
 .doc-card:active,
 .quick-links a:active,
 .doc-button:active {
-  transform: translateY(0);
+  transform: scale(0.99);
 }
 
 .doc-card:focus-visible,
@@ -299,6 +386,11 @@
 .doc-card-meta::after {
   margin-left: 0.35rem;
   content: ">";
+  transition: transform 0.18s ease;
+}
+
+.doc-card:hover .doc-card-meta::after {
+  animation: doc-arrow-nudge 360ms ease-out;
 }
 
 .doc-button {
@@ -317,7 +409,7 @@
   border-radius: 8px;
   box-shadow: 0 8px 18px rgba(37, 99, 235, 0.16);
   cursor: pointer;
-  transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   touch-action: manipulation;
 }
 
@@ -325,6 +417,7 @@
   background: var(--md-primary-fg-color--dark);
   border-color: var(--md-primary-fg-color--dark);
   box-shadow: 0 10px 22px rgba(37, 99, 235, 0.22);
+  transform: translateY(-1px);
 }
 
 .doc-button.secondary {
@@ -391,7 +484,7 @@
   border: 1px solid var(--doc-border);
   border-radius: 8px;
   cursor: pointer;
-  transition: border-color 0.18s ease, background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   touch-action: manipulation;
 }
 
@@ -399,12 +492,19 @@
   margin-left: auto;
   color: var(--md-primary-fg-color);
   content: ">";
+  transition: transform 0.18s ease;
 }
 
 .quick-links a:hover {
   color: var(--md-primary-fg-color) !important;
   background: var(--doc-link-soft);
   border-color: rgba(37, 99, 235, 0.35);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.08);
+  transform: translateY(-1px);
+}
+
+.quick-links a:hover::after {
+  animation: doc-arrow-nudge 360ms ease-out;
 }
 
 .quick-links .quick-link-featured {
@@ -414,6 +514,7 @@
   background: var(--md-primary-fg-color);
   border-color: var(--md-primary-fg-color);
   box-shadow: 0 10px 22px rgba(37, 99, 235, 0.18);
+  animation: doc-pulse 3000ms ease-in-out infinite;
 }
 
 .quick-links .quick-link-featured::after {
@@ -526,6 +627,18 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .md-content__inner > h1,
+  .md-content__inner > p,
+  .md-content__inner > .admonition,
+  .md-content__inner > .address-panel,
+  .md-content__inner > .doc-card-grid,
+  .md-content__inner > .quick-links,
+  .md-content__inner > .decision-grid,
+  .md-content__inner > .contact-list,
+  .quick-links .quick-link-featured {
+    animation: none;
+  }
+
   .doc-card,
   .doc-button,
   .quick-links a,
@@ -533,7 +646,18 @@
     transition: none;
   }
 
-  .doc-card:hover {
+  .doc-card:hover,
+  .doc-button:hover,
+  .quick-links a:hover,
+  .doc-card:active,
+  .doc-button:active,
+  .quick-links a:active {
     transform: none;
+  }
+
+  .doc-card:hover::before,
+  .doc-card:hover .doc-card-meta::after,
+  .quick-links a:hover::after {
+    animation: none;
   }
 }
