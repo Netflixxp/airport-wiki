@@ -24,17 +24,33 @@ OpenWrt 安装包内通常已经包含：
 <a class="doc-button" href="https://down.zcjdgo.de/soft/artifact-openwrt.zip">下载 OpenWrt 安装包</a>
 
 !!! info "安装前提示"
-    请先确认你的路由器架构，例如 `aarch64`、`arm64`、`x86_64` 等，并下载对应架构的安装包。
+    OpenWrt 安装包需要和路由器架构一致。下载压缩包后，请根据自己的设备选择对应的 `.ipk` 文件。
 
-## 安装方式 A：使用 opkg 安装（推荐）
+## 选择对应安装包
 
-如果你拿到的是 `.ipk` 安装包，推荐使用 `opkg` 安装。
+常见设备可以参考下面的选择方式：
+
+| 路由器 / 设备类型 | 推荐安装包 |
+| --- | --- |
+| 红米 AX 系列 / 小米 AX 系列 / GL.iNet Flint / NanoPi R5 / 树莓派 4 | `mihomo_*_aarch64_generic.ipk` |
+| 小米 4A 千兆版 / Newifi 3 / 大部分 MT7621 设备 | `mihomo_*_arm_cortex-a7.ipk` |
+| N100 / N5105 工控机 / PVE 或 ESXi 虚拟软路由 | `mihomo_*_x86_64.ipk` |
+
+如果不确定路由器架构，可以 SSH 进入路由器后执行：
+
+```sh
+opkg print-architecture
+```
+
+根据输出结果选择对应架构的安装包。
+
+## 使用 opkg 安装
 
 先安装核心程序：
 
 ```sh
 # 安装核心程序
-# 请根据你的路由器架构选择对应的 .ipk 文件
+# 请将文件名替换成你架构对应的 .ipk 文件
 opkg install mihomo_*_aarch64_generic.ipk
 ```
 
@@ -52,20 +68,11 @@ opkg install luci-app-mihomo_*_all.ipk
 LuCI -> 服务 -> Mihomo
 ```
 
-## 安装方式 B：使用自解压 .run 包
-
-如果你拿到的是 `.run` 安装包，可以直接在路由器上执行：
-
-```sh
-chmod +x mihomo-openwrt-arm64-*.run
-./mihomo-openwrt-arm64-*.run
-```
-
-执行完成后，程序和相关文件会自动释放到对应目录。
+然后在页面中填写订阅地址并启用服务。
 
 ## 基础配置
 
-安装完成后，可以通过 UCI 命令启用 Mihomo 并设置订阅地址：
+如果你习惯命令行，也可以通过 UCI 启用 Mihomo 并设置订阅地址：
 
 ```sh
 uci set mihomo.config.enabled='1'
@@ -112,6 +119,7 @@ http://192.168.1.1:9090/ui
 ### 安装失败
 
 - 请确认安装包架构和路由器 CPU 架构一致。
+- 不确定架构时，先执行 `opkg print-architecture` 查看。
 - 请确认路由器剩余存储空间足够。
 - 如果是 `opkg` 安装失败，可以先执行 `opkg update` 后再试。
 
