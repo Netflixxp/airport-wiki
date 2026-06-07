@@ -38,7 +38,6 @@ nav:
           - 客户端A: clients/windows-client-a.md
           - 客户端B: clients/windows-client-b.md
       - macOS: clients/macos-client-a.md
-      - Linux: clients/linux.md
       - Android:
           - 客户端选择: platforms/android.md
           - 客户端A: clients/android-client-a.md
@@ -46,6 +45,7 @@ nav:
       - Android TV: clients/android-tv.md
       - iPhone / iPad: clients/ios.md
       - OpenWrt: clients/openwrt.md
+      - Linux: clients/linux.md
   - 常见问题:
       - 流量不够了怎么办: faq/traffic.md
       - 账号与节点: faq/subscribe.md
