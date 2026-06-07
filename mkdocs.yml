@@ -38,6 +38,7 @@ nav:
           - 客户端A: clients/windows-client-a.md
           - 客户端B: clients/windows-client-b.md
       - macOS: clients/macos-client-a.md
+      - Linux: clients/linux.md
       - Android:
           - 客户端选择: platforms/android.md
           - 客户端A: clients/android-client-a.md

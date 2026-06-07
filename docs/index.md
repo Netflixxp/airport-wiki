@@ -32,6 +32,11 @@
     <span class="doc-card-text">Mac 用户入口，使用 macOS 定制客户端。</span>
     <span class="doc-card-meta">查看 macOS 使用说明</span>
   </a>
+  <a class="doc-card" href="clients/linux/">
+    <span class="doc-card-title">Linux</span>
+    <span class="doc-card-text">Linux x86_64 用户入口，支持 DEB / RPM / AppImage。</span>
+    <span class="doc-card-meta">进入 Linux 页面</span>
+  </a>
   <a class="doc-card" href="platforms/android/">
     <span class="doc-card-title">Android</span>
     <span class="doc-card-text">Android 手机和平板用户入口。</span>
