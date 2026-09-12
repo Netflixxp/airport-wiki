@@ -1,10 +1,10 @@
-# Windows 客户端A
+# Windows 定制客户端
 
-客户端A是新版 Windows 定制客户端，适合首次安装和日常使用。定制客户端已经预先适配本站服务，安装后输入账号密码即可使用，可避免手动复制链接、导入地址和维护复杂配置。
+Windows 定制客户端适合首次安装和日常使用。客户端已经预先适配本站服务，安装后输入账号密码即可使用，可避免手动复制链接、导入地址和维护复杂配置。
 
 ## 下载地址
 
-<a class="doc-button" href="https://down.zcjdgo.de/soft/zcjsqwin.exe">下载 Windows 客户端A</a>
+<a class="doc-button" href="https://down.zcjdgo.de/soft/zcjsqwin.exe">下载 Windows 定制客户端</a>
 
 
 ## 安装与登录

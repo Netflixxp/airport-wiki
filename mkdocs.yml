@@ -35,13 +35,11 @@ nav:
   - 客户端使用:
       - Windows:
           - 客户端选择: platforms/windows.md
-          - 客户端A: clients/windows-client-a.md
-          - 客户端B: clients/windows-client-b.md
+          - 定制客户端: clients/windows-client-a.md
       - macOS: clients/macos-client-a.md
       - Android:
           - 客户端选择: platforms/android.md
-          - 客户端A: clients/android-client-a.md
-          - 客户端B: clients/android-client-b.md
+          - 定制客户端: clients/android-client-a.md
       - Android TV: clients/android-tv.md
       - iPhone / iPad: clients/ios.md
       - OpenWrt: clients/openwrt.md
