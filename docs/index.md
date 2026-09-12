@@ -1,13 +1,27 @@
-# 众筹加速器帮助中心 Wiki
-
-这里整理定制客户端下载、使用说明、最新网址与联系方式。请先选择你的设备，再进入对应教程页面。
+<section class="home-hero">
+  <div class="home-hero-copy">
+    <h1>众筹加速器<br><span>帮助中心 Wiki</span></h1>
+    <p>这里整理定制客户端下载、使用说明、最新网址与联系方式。请先选择你的设备，再进入对应教程页面。</p>
+  </div>
+  <div class="home-hero-network" aria-hidden="true">
+    <span class="network-ring network-ring-a"></span>
+    <span class="network-ring network-ring-b"></span>
+    <span class="network-axis network-axis-a"></span>
+    <span class="network-axis network-axis-b"></span>
+    <span class="network-node network-node-a"></span>
+    <span class="network-node network-node-b"></span>
+    <span class="network-node network-node-c"></span>
+    <span class="network-node network-node-d"></span>
+    <span class="network-core"></span>
+  </div>
+</section>
 
 !!! warning "公告"
     - 官网、客户端安装包或节点配置如有变更，请以本站公告为准。
     - 客户端请尽量从本站提供的入口获取。
     - 如遇登录失败、连接异常、节点全部超时，请先查看对应平台教程和常见问题。
 
-## 最新网址
+## 最新网址 {.home-section-title}
 
 <div class="address-panel">
   <p class="eyebrow">当前主站</p>
@@ -19,7 +33,7 @@
 
 建议将最新网址加入浏览器收藏夹，避免因域名调整影响登录或下载客户端。
 
-## 选择你的设备
+## 选择你的设备 {.home-section-title}
 
 <div class="doc-card-grid">
   <a class="doc-card" href="platforms/windows/">
@@ -59,7 +73,7 @@
   </a>
 </div>
 
-## 常用入口
+## 常用入口 {.home-section-title}
 
 <div class="quick-links">
   <a class="quick-link-featured" href="faq/traffic/">流量不够了怎么办</a>
