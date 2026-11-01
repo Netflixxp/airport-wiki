@@ -1008,6 +1008,99 @@ body {
   border-color: rgba(89, 211, 243, 0.28);
 }
 
+.plan-highlight {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.4rem;
+  margin: 1.25rem 0 1.8rem;
+  padding: 1.35rem 1.4rem;
+  color: var(--doc-hero-text);
+  background:
+    linear-gradient(105deg, rgba(21, 94, 239, 0.2), rgba(0, 168, 214, 0.07) 65%, transparent),
+    var(--doc-hero-bg);
+  border: 1px solid rgba(76, 172, 255, 0.46);
+  border-left: 3px solid var(--doc-signal-bright);
+  border-radius: 4px;
+  box-shadow: var(--doc-shadow-tech);
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+  isolation: isolate;
+  overflow: hidden;
+  animation: tech-reveal 420ms 120ms ease-out both;
+}
+
+.plan-highlight::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background-image:
+    linear-gradient(rgba(91, 214, 244, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91, 214, 244, 0.055) 1px, transparent 1px);
+  background-size: 24px 24px;
+  -webkit-mask-image: linear-gradient(90deg, transparent 20%, #000);
+  mask-image: linear-gradient(90deg, transparent 20%, #000);
+}
+
+.plan-highlight::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 42%;
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, transparent, var(--doc-signal-bright));
+}
+
+.plan-highlight-copy,
+.plan-highlight-action {
+  position: relative;
+  z-index: 1;
+}
+
+.plan-highlight-kicker {
+  display: block;
+  margin-bottom: 0.38rem;
+  color: #72e8ff;
+  font-family: var(--doc-font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.md-typeset .plan-highlight h2 {
+  margin: 0 0 0.45rem;
+  padding: 0;
+  color: var(--doc-hero-text);
+  font-size: 1.22rem;
+  line-height: 1.35;
+}
+
+.md-typeset .plan-highlight h2::before,
+.md-typeset .plan-highlight h2::after {
+  display: none;
+}
+
+.md-typeset .plan-highlight p {
+  max-width: 46rem;
+  margin: 0;
+  color: #bdcce1;
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.md-typeset .plan-highlight code {
+  color: #7be8ff;
+  background: rgba(57, 209, 238, 0.08);
+  border-color: rgba(89, 211, 243, 0.28);
+}
+
+.plan-highlight-action {
+  min-width: 9.5rem;
+  white-space: nowrap;
+}
+
 .eyebrow {
   color: #8da8c8 !important;
   font-family: var(--doc-font-mono);
@@ -1347,6 +1440,20 @@ body {
     margin-top: 0.85rem;
   }
 
+  .plan-highlight {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+    padding: 1.1rem;
+  }
+
+  .md-typeset .plan-highlight h2 {
+    font-size: 1.12rem;
+  }
+
+  .plan-highlight-action {
+    width: 100%;
+  }
+
   .doc-card,
   .decision-card,
   .contact-item {
@@ -1392,6 +1499,7 @@ body {
   .home-hero,
   .doc-card,
   .address-panel,
+  .plan-highlight,
   .quick-links .quick-link-featured,
   .network-node {
     opacity: 1;

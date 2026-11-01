@@ -34,23 +34,32 @@
 
 建议将最新网址加入浏览器收藏夹，避免因域名调整影响登录或下载客户端。
 
+<section class="plan-highlight" aria-labelledby="plan-highlight-title">
+  <div class="plan-highlight-copy">
+    <span class="plan-highlight-kicker">200GB+ 套餐权益</span>
+    <h2 id="plan-highlight-title">解锁更多 CN2 高品质直连节点</h2>
+    <p><code>200GB</code>（含）以上套餐可使用更多高品质直连节点，线路均采用 <code>CN2</code>，适合对连接稳定性有更高要求的用户。部分节点带有流量倍率，请以节点名称标识为准。</p>
+  </div>
+  <a class="doc-button plan-highlight-action" href="https://zcjsq.de">查看并升级套餐</a>
+</section>
+
 ## 选择你的设备 {.home-section-title}
 
 <div class="doc-card-grid">
-  <a class="doc-card" href="platforms/windows/">
+  <a class="doc-card" href="clients/windows-client-a/">
     <span class="doc-card-title">Windows</span>
     <span class="doc-card-text">Windows 桌面端用户入口。</span>
-    <span class="doc-card-meta">进入 Windows 页面</span>
+    <span class="doc-card-meta">查看下载与使用说明</span>
   </a>
   <a class="doc-card" href="clients/macos-client-a/">
     <span class="doc-card-title">macOS</span>
     <span class="doc-card-text">Mac 用户入口，使用 macOS 定制客户端。</span>
     <span class="doc-card-meta">查看 macOS 使用说明</span>
   </a>
-  <a class="doc-card" href="platforms/android/">
+  <a class="doc-card" href="clients/android-client-a/">
     <span class="doc-card-title">Android</span>
     <span class="doc-card-text">Android 手机和平板用户入口。</span>
-    <span class="doc-card-meta">进入 Android 页面</span>
+    <span class="doc-card-meta">查看下载与使用说明</span>
   </a>
   <a class="doc-card" href="clients/android-tv/">
     <span class="doc-card-title">Android TV</span>
