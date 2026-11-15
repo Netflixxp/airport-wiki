@@ -36,9 +36,9 @@
 
 <section class="plan-highlight" aria-labelledby="plan-highlight-title">
   <div class="plan-highlight-copy">
-    <span class="plan-highlight-kicker">200GB+ 套餐权益</span>
-    <h2 id="plan-highlight-title">解锁更多 CN2 高品质直连节点</h2>
-    <p><code>200GB</code>（含）以上套餐可使用更多高品质直连节点，线路均采用 <code>CN2</code>，适合对连接稳定性有更高要求的用户。部分节点带有流量倍率，请以节点名称标识为准。</p>
+    <h2 id="plan-highlight-title">200GB 及以上套餐｜高端直连线路</h2>
+    <p>可使用香港、日本、新加坡三网高端直连线路，以及 6 条回程均走 CN2 的美西线路。高端直连节点均设有流量倍率，使用前请留意节点标注。</p>
+    <p><a class="doc-button secondary" href="faq/subscribe/#premium-direct-routes">查看线路详情</a></p>
   </div>
   <a class="doc-button plan-highlight-action" href="https://zcjsq.de">查看并升级套餐</a>
 </section>
